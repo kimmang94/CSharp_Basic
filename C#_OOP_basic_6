@@ -1,0 +1,34 @@
+using System;
+
+namespace textfight1
+{
+        // OOP (은닉성)
+        // 보안레벨 개념
+
+
+    class Knight
+    {
+        //접근 한정자
+        /*
+         * 누구나 가능 public
+         * 상속받은객체는 사용가능 protected
+         * 외부 사용 금지(클래스 내부 에서만 사용가능) private
+         * 아무것도 입력안하면 기본값 private
+         */
+        public int hp; // 모두에게 공개
+
+        public void SecretFunctuon()
+        {
+
+        }
+    }
+
+    class textfight1
+    { 
+        static void Main(string[] args)
+        {
+            Knight knight = new Knight();
+            knight.hp = 1;
+        }
+    }
+}
