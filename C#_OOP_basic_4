@@ -1,0 +1,94 @@
+using System;
+
+namespace textfight1
+{
+    // 객체 (OOP Object Oriented Programming)
+    // 3대속성 : 은닉성, 상속성, 다형성
+
+    // 계층관계 정의
+    class Player // 부모클래스 혹은 기반클래스
+    {
+        static public int counter = 1;
+
+        public int id;
+        public int hp;
+        public int attack;
+
+        public Player()
+        {
+            Console.WriteLine("Player 생성자 호출!");
+        }
+
+        public Player(int hp)
+        {
+            this.hp = hp;
+            Console.WriteLine("Player hp 생성자 호출!");
+        }
+
+    }
+
+    class Mage : Player // 자식 클래스 혹은 파생 클래ㅅ
+    {
+      
+    }
+
+    class Archer : Player
+    {
+        
+    }
+
+
+    class Knight : Player
+    {
+        int c;
+
+        public Knight() : base(100)
+        {
+            Console.WriteLine("Knight 생성자 호출!");
+        }
+        static public Knight CreateKnight()
+        {
+            Knight knight = new Knight();
+            knight.hp = 100;
+            knight.attack = 1;
+            return knight;
+        }
+
+        
+       
+        public Knight(int hp) 
+        { 
+            this.c = 10; // 나의 변수
+            base.hp = 100; // 부모에게 접근 / 부모의 변ㅅ
+            Console.WriteLine("int 생성자 호출");
+        }
+
+        public Knight(int hp, int attack) : this()
+        {
+            this.hp = hp;
+            this.attack = attack;
+            Console.WriteLine("int hp, int attack 생성자 호출");
+        }
+
+        public void Move()
+        {
+            Console.WriteLine("Knaight Move");
+        }
+
+        public void Attack()
+        {
+            Console.WriteLine("Knight Attack");
+        }
+    
+    }
+     
+    class textfight1
+    { 
+        static void Main(string[] args)
+        {
+            Knight knight = Knight.CreateKnight();
+           
+
+        }
+    }
+}
