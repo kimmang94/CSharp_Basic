@@ -1,0 +1,77 @@
+using System;
+
+namespace textfight1
+{
+        // OOP (다형성)
+
+    /*  클래스의 형식변환
+     *  
+     * 
+     * 
+     */
+
+    class Player
+    {
+        protected int hp;
+        protected int attack;
+
+        public virtual void Move()
+        {
+            Console.WriteLine("Player 이동!");
+        }
+    }
+
+    class Knight : Player
+    {
+        public override void Move()
+        {
+            Console.WriteLine("Knight 이동!");
+        }
+    }
+
+    class Mage : Player
+    {
+        public int mp;
+
+        public override void Move()
+        {
+            Console.WriteLine("Mage 이동!");
+        }
+    }
+    class textfight1
+    {
+        static void EnterGame(Player player)
+        {
+            
+            Mage mage = (player as Mage); 
+            if (mage != null)
+            {
+                mage.mp = 10;
+                mage.Move();
+            }
+
+        }
+        /*
+         * 오버로딩 : 함수 이름의 재사용
+         * 오버라이딩 : 다형성을 이요
+         * 
+         */
+        
+        static void Main(string[] args)
+        {
+            Knight knight = new Knight();
+            Mage mage = new Mage();
+
+            // Mage 타입 -> Player 타입
+            // Player타입 -> Mage 타입 ? 꼭그렇지는 않다
+            Player magePlayer = mage;
+            Mage mage2 = (Mage)magePlayer;
+            //강제로 할경우 틀린경우 큰일난다(기사가 메이지로 변환될수있음)
+            // 자식 -> 부모 가능 / 부모 -> 자식 불가ㅡ
+            
+
+            EnterGame(knight);
+
+        }
+    }
+}
