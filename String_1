@@ -1,0 +1,29 @@
+using System;
+
+namespace textfight1
+{
+     class textfight1
+    { 
+        static void Main(string[] args)
+        {
+            string name = "Harry Potter";
+
+            // 1.찾기
+            bool found = name.Contains("Harry"); // 문자열이있나 찾기
+            int index = name.IndexOf('P'); // 특정 문자가 있나 없나 없으면 -1
+
+            // 2.변형
+            name = name + " Junior "; // 추가 1
+
+            name.ToLower(); // 모든 문자열 소문자로 변경
+            name.ToUpper(); // 모든 문자열 대문자로 변경
+
+            name.Replace('r', 'l'); // r을 l로 변경
+
+            // 3.분할
+            string[] names = name.Split(new char[] { ' ' }); // 띄어쓰기로 문자열 분리
+            string substringname = name.Substring(5); // 5번째부터 새로운 변수할당
+
+        }
+    }
+}
