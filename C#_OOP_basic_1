@@ -1,0 +1,42 @@
+using System;
+
+namespace textfight1
+{
+    // 객체 (OOP Object Oriented Programming)
+    // 속성
+    // 기능
+    // Knight
+    // 속성 : hp, attack
+    // 기능 : Move, Attack, Die
+
+    class Knight
+    {
+        public int hp;
+        public int attack;
+
+        public void Move()
+        {
+            Console.WriteLine("Knaight Move");
+        }
+
+        public void Attack()
+        {
+            Console.WriteLine("Knight Attack");
+        }
+    }
+
+    class textfight1
+    { 
+        static void Main(string[] args)
+        {
+            Knight knight = new Knight();
+
+            knight.hp = 100;
+            knight.attack = 10;
+
+            knight.Move();
+            knight.Attack();
+            
+        }
+    }
+}
