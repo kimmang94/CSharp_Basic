@@ -1,0 +1,59 @@
+using System;
+
+namespace textfight1
+{
+        // OOP (다형성)
+
+    /*  클래스의 형식변환
+     *  
+     * 
+     * 
+     */
+
+    class Player
+    {
+        protected int hp;
+        protected int attack;
+    }
+
+    class Knight : Player
+    {
+
+    }
+
+    class Mage : Player
+    {
+        public int mp;
+    }
+    class textfight1
+    {
+        static void EnterGame(Player player)
+        {
+            bool isMage = (player is Mage); // player의 mage 확인 return 값 bool
+            if (isMage)
+            {
+                Mage mage = (Mage)player;
+                mage.mp = 10;
+            }
+            
+        
+        }
+
+        
+        static void Main(string[] args)
+        {
+            Knight knight = new Knight();
+            Mage mage = new Mage();
+
+            // Mage 타입 -> Player 타입
+            // Player타입 -> Mage 타입 ? 꼭그렇지는 않다
+            Player magePlayer = mage;
+            Mage mage2 = (Mage)magePlayer;
+            //강제로 할경우 틀린경우 큰일난다(기사가 메이지로 변환될수있음)
+            // 자식 -> 부모 가능 / 부모 -> 자식 불가ㅡ
+
+            EnterGame(knight);
+
+        }
+    }
+}
