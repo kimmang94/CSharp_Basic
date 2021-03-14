@@ -1,0 +1,59 @@
+using System;
+
+namespace textfight1
+{
+    
+    class Player 
+    {
+        static public int counter = 1;
+        public int id;
+        public int hp;
+        public int attack;
+
+        public void Move()
+        {
+            Console.WriteLine("Player Move");
+        }
+
+        public void Attack()
+        {
+            Console.WriteLine("Player Attack");
+        }
+    }
+
+    class Mage
+    {
+      
+    }
+
+    class Archer
+    {
+        
+    }
+
+
+    class Knight : Player
+    {
+        public void Stun()
+        {
+
+        }
+
+     
+    }
+
+        
+       
+       
+     
+    class textfight1
+    { 
+        static void Main(string[] args)
+        {
+            Knight knight = new Knight();
+            knight.Move();
+            knight.Attack();
+            //필드 뿐아니라 함수도 사용가능 속성과 기능 사용가느
+        }
+    }
+}
