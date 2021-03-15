@@ -1,0 +1,22 @@
+using System;
+
+namespace ConsoleApp5
+{
+    class Program
+    {
+        // 5! = 5 x 4 x 3 x 2 x 1
+        // 5! = 5 x 4!
+        static void Main(string[] args)
+        {
+            int fact(int n)
+            {
+                if (n < 2)
+                    return n;
+                else
+                    return n * fact(n - 1);
+            }
+
+            Console.WriteLine(fact(5)); 
+        }
+    }
+}
