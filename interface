@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+
+namespace Array
+{
+    // 어떠한 기능을 반드시 사용 하여야함 
+    class Program
+    {
+        // abstract 를 붙이면 몬스터로는 생성 불가
+        // abstract는 다중상속 이안되고 interface는 된다
+        abstract class Monster
+        {
+            public abstract void Shout();
+        }
+
+        interface iFlyable // i 붙히는걸 추천
+        {
+            /*public 필요없ㅇ*/void Fly();
+        }
+        // 다중상속 불가능
+        // 
+        class FlyableOrc : Orc, iFlyable
+        {
+            public void Fly()
+            {
+                // 사용할때 반드시 interface의 부분을 정의해야한다
+            }
+        }
+
+        /*
+        class SkeletonOrc : Orc, Skeleton
+        {
+            Shout(); 꾸에엑? 록타? 구조가 꼬인다
+            그렇기 때문에 다중상속이 불가능 하다
+        }
+        */
+        class Orc : Monster
+        {
+            //abstract 로 선언한 함수는 반드시 선언해야함
+            public override void Shout()
+            {
+                Console.WriteLine("록타!");
+            }
+        }
+
+        class Skeleton : Monster
+        {
+            //abstract 로 선언한 함수는 반드시 선언해야함 (강제성)
+            public override void Shout()
+            {
+                Console.WriteLine("꾸에엑");
+            }
+        }
+        
+        static void Main(string[] args)
+        {
+            //추상클래스 , 인터페이스
+            //추상 클래스 이므로 생성 불abstract
+            //Monster monster = new Monster();
+
+        }
+    }
+}
