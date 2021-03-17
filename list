@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+
+namespace Array
+{
+
+  
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] arr = new int[10];
+            // arr[20]; 오류가 난다
+            // int[] arr = new int [1000]; 메모리 낭비가 심하다
+
+            // List <- 동적 배열
+            List<int> list;
+            //List 를쓰려면 using System.Collections.Generic 사용
+            // List<type>
+
+            List<int> list1 = new List<int>();
+            for (int i = 0; i < 5; i++)
+                list1.Add(i);
+            // list[0] = 1; exception 오류
+            // Add 는 맨뒤에 추가
+            list1.Add(1);
+
+            for (int i = 0; i < 5; i++)
+                Console.WriteLine(list1[i]);
+
+
+            foreach (int num in list1)
+                Console.WriteLine(num);
+
+            //삽입 , 삭제
+            list1.Insert(2, 999);
+            // 2번째 index에 999값 대입
+
+
+            bool success = list1.Remove(3); // 3이라는 값 지우기 (여러개중 첫번째 3)
+            // Remove 는 bool 값
+            list1.RemoveAt(0); // 0번째 값 삭제
+            list1.Clear(); // 전체 삭제
+
+
+        }
+    }
+}
