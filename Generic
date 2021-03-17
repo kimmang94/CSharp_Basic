@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+
+namespace Array
+{
+
+    class Program
+    {
+
+        static void Test<T>(T inpit)
+        {
+            //어떤값이 와도 작동한다.
+        }
+
+        class MyList<T>
+        {
+            T[] arr = new T[10];
+        }
+        static void Main(string[] args)
+        {
+            // Generic 일반화
+            //
+            object obj = 3;
+            object obj1 = "hello world";
+            // object 는 참조타입
+
+
+
+            int num = (int)obj;
+            string str = (string)obj1;
+
+            MyList<int> myIntList = new MyList<int>();
+            MyList<float> myFloatList = new MyList<float>();
+
+            Test<int>(3);
+            
+        }
+    }
+}
