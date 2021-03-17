@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+
+namespace Array
+{
+    
+    class Program
+    {
+        //객체 지향 -> 은닉성
+        //불필요한 정보 외부노출 x
+        class Knight
+        {
+            /*protected int hp;
+
+            public int Hp
+            {
+                get { return hp; }
+                set { this.hp = value; }
+            }*/
+
+            public int Hp
+            {
+                get; set;
+            }
+
+            private int _hp;
+            public int GetHp() { return _hp; }
+            public void SetHp(int value) { _hp = value; }
+        }
+
+        static void Main(string[] args)
+        {
+            //프로퍼티
+            Knight knight = new Knight();
+            knight.Hp = 100;
+
+            int hp = knight.Hp;
+        }
+    }
+}
