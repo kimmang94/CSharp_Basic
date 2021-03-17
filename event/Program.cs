@@ -1,0 +1,42 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Array
+{
+    
+    class Program
+    {
+        // 업체사장 -> 사장님의 비서
+        // 우리의 연락처 / 용건 거꾸로 -> 연락을달라고
+
+        //함수가아닌 형식 
+        delegate int OnClicked();
+        // delegate -> 형식은 형식인데, 함수자체를 인자로 넘겨주는 형식
+        // 반환 : int / 입력 : void /
+        // OnClicked Dㅣ dlelgate 의 형식 이름
+
+        static int TestDelegate()
+        {
+            Console.WriteLine("Hello");
+            return 0;
+        }
+        
+        // UI
+        static void ButtonPressed(OnClicked clickedFunction/*함수 자체를 인자로 넘겨주고*/)
+        {
+            // 함수를 호출();
+            clickedFunction();
+            // PlayerAttack();
+            // 상황에 따라 이렇게 구현하기 힘들때가 있다
+            // UI 코드와 게임로직은 따로관리하는게 좋다
+
+        }
+
+        static void Main(string[] args)
+        {
+            //delegate (대리자)
+
+            ButtonPressed(TestDelegate);
+        }
+    }
+}
