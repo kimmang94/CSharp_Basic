@@ -1,0 +1,54 @@
+using System;
+
+namespace algoritm
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // 커서 끄기
+            Console.CursorVisible = false;
+            // 시간측정
+            const int WAIT_TICK = 1000 / 30;
+            const char CIRCLE = '\u25CF';
+
+            int lastTick = 0;
+
+
+            while (true)
+            {
+                #region 프레임 관리 
+                // 프레임 관리
+                // 시스템 시작이후 경과시간 단위ms
+                int currentTick = System.Environment.TickCount;
+                
+
+                // 만약 경과시간이 1/30 초 보다 작다면
+                if (currentTick - lastTick < WAIT_TICK)
+                    continue;
+                lastTick = currentTick;
+                #endregion
+                // 입력
+                // 사용자의 키보드 및 마우스 input
+                // 로직
+                // 입력에 따라 로직 실행
+                // 렌더링
+                // opengl 등에따라 그래픽 렌더링
+
+                Console.SetCursorPosition(0, 0);
+
+                for (int i = 0; i < 25; i++)
+                {
+                    for (int j = 0; j < 25; j++)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.Write(CIRCLE);
+                    }
+                    Console.WriteLine();
+                }
+            }
+
+
+        }
+    }
+}
