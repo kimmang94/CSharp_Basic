@@ -4,23 +4,21 @@ namespace CSharp
 {
     class Program
     {
-        static void Divide(int a, int b, out int result1, out int result2)
-        {
-            result1 = a / b;
-            result2 = a % b;
-
-        }
+        // 한줄 주석
+        /*
+         * 여러줄 주석 
+         */
         static void Main(string[] args)
         {
-            int num1 = 10;
-            int num2 = 3;
+            // 데이터 + 로직
+            // 체력 0
+            int hp;
 
-            int result1;
-            int result2;
-            Divide(10, 3, out result1, out result2);
+            hp = 100;
 
-            Console.WriteLine(result1);
-            Console.WriteLine(result2);
+            int mp = 50;
+
+            Console.WriteLine("My Status\nHP:{0}\nMP:{1}",hp, mp);
         }
     }
 }
